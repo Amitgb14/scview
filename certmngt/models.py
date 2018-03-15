@@ -36,3 +36,14 @@ class SSLCertificate(models.Model):
     def __str__(self):
         return self.url
 
+class RawCertificate(models.Model):
+    certificate = models.OneToOneField(SSLCertificate)
+    raw_text = models.TextField("Raw Text")
+    date = models.DateTimeField("Date", default=timezone.now,
+            blank=False)
+    status = models.BooleanField('Status', default=1,
+            choices=STATUS_CHOICES, blank=False)
+
+    def __str__(self):
+        return ''
+

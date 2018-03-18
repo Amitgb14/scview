@@ -1,0 +1,64 @@
+
+{% block content %}
+{% include 'header.html' %}
+{% load static %}
+{% load custom_tags %}
+
+<!-- Profile Box -->
+<div id="profile_box" class="container">
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="sidebar-nav">
+        <div class="navbar navbar-default" role="navigation">
+            <ul class="nav navbar-nav">
+              <li class="active mynavbar" target="overview"><a href="#overview">Overview</a></li>
+              <li class="mynavbar" target="myaccount"><a href="#myaccount">My Account</a></li>
+              <li class="mynavbar" target="certificate"><a href="#certificate">Certificate</a></li>
+              <li class="mynavbar" target="notification"><a href="#notification">Notification</a></li>
+              <li class="mynavbar" target="logs"><a href="#logs">Logs</a></li>
+              <li class="mynavbar" target="reviews"><a href="#reviews">Reviews <span class="badge">1,118</span></a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-10">
+      
+      <div class="newboxes" id="overview">
+        <!-- Overview -->
+        {% include 'overview.html' %}
+        <!-- end Overview -->
+      </div>
+
+      <div class="newboxes" id="myaccount">
+        <!-- My Account -->
+        {% include 'myaccount.html' %}
+        <!-- end My Account -->
+      </div>
+
+      <div class="newboxes" id="certificate">
+        <!-- My Certificate -->
+        {% include 'certificate.html' %}
+        <!-- end My Certificate -->
+      </div>
+
+      <div class="newboxes" id="notification">
+        <!-- My Notification -->
+        {% include 'notification.html' %}
+        <!-- end My Notification -->
+      </div>
+
+      <div class="newboxes" id="logs">
+        <!-- My Logs -->
+        {% include 'logs.html' %}
+        <!-- end My Logs -->
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+{% include 'footer.html' %}
+{% endblock content %}

@@ -1,0 +1,17 @@
+dashboard/
+
+	header.html
+	footer.html
+
+	signup.html
+	signin.html
+
+	dashboard.html
+	message.html
+	notification.html
+
+	add_certificate.html
+	activate_certificate.html
+	view_certificate.html
+	
+

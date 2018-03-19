@@ -17,7 +17,7 @@
 
 .products-blocks{
     padding-top: 15px;
-    padding-left: 40px; 
+    padding-left: 30px; 
     padding-right: 0px;
 }
 
@@ -58,6 +58,10 @@ hr {
     border-color: #5cb85c;
 }
 
+.green-row {
+    background-color: #8af08a;
+}
+
 .panel-green .panel-heading, .panel-green .panel-body, .panel-green .panel-footer {
     border-color: #5cb85c;
     color: #fff;
@@ -76,6 +80,12 @@ hr {
     border-color: #d9534f;
 }
 
+
+.red-row {
+    background-color: #f0716d;
+}
+
+
 .panel-red .panel-heading, .panel-red .panel-body, .panel-red .panel-footer {
     border-color: #d9534f;
     color: #fff;
@@ -92,6 +102,10 @@ hr {
 
 .panel-yellow {
     border-color: #f0ad4e;
+}
+
+.yellow-row {
+    background-color: #f8c57d;
 }
 
 .panel-yellow .panel-heading, .panel-yellow .panel-body, .panel-yellow .panel-footer {

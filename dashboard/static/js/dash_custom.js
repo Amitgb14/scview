@@ -27,12 +27,25 @@ function bar_progress(progress_line_object, direction) {
 jQuery(document).ready(function() {
 
 	
-	jQuery('.mynavbar').click(function(){
-		jQuery('.newboxes').hide(300);
-		jQuery('#'+$(this).attr('target')).show(200);
+	jQuery(".mynavbar").click(function(){
+		jQuery(".mynavbar").removeClass('active');
+		$(this).addClass('active');
+		jQuery(".newboxes").hide(300);
+		jQuery("#"+$(this).attr("target")).show(200);
 	});
 
-	
+	$(".products-blocks .active").on("click", function() {
+		$("#cert_table thead tr ").removeClass().addClass("green-row");
+	});
+
+	$(".products-blocks .warning").on("click", function() {
+		$("#cert_table thead tr ").removeClass().addClass("yellow-row");
+	});
+
+	$(".products-blocks .critical").on("click", function() {
+		$("#cert_table thead tr ").removeClass().addClass("red-row");
+	});
+
     /*
         Form
     */

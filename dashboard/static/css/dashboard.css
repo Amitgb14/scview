@@ -38,6 +38,10 @@
 
 }
 
+#cert_table {
+    position: relative;
+    top: 20px;
+}
 
 hr {
    border: 0.5px solid #E7E7E7;

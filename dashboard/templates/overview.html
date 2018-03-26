@@ -1,11 +1,14 @@
 
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <h3>
-                <span class="label label-default">Overview</span>
-            </h3>
-        </li>
-    </ol>
+    <div class="row">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <h3>
+                    <span class="label label-default">Overview</span>
+                </h3>
+            </li>
+        </ol>
+    </div>
+
 
     <div class="row products-blocks">
         <div class="col-lg-4 col-md-4 col-sm-4 active">
@@ -46,36 +49,41 @@
                 </div>
             </div>
         </div>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            <span class="glyphicon glyphicon-plus">Add</span>
+        </button>
+        {% include 'add_certificate_modal.html' %}
     </div>
-
-    <table id="cert_table" class="table table-hover">
-        <thead>
-            <tr class="green-row">
-                <th>Added On</th>
-                <th>Host</th>
-                <th>Last Update</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            <tr>
-                <td>12 December 2017 11PM</td>
-                <td>abc.com</td>
-                <td>3s</td>
-            </tr>
-
-            <tr>
-                <td>1 January 2018 9AM</td>
-                <td>pqr.com</td>
-                <td>7s</td>
-            </tr>
-
-            <tr>
-                <td>19 March 2018 7PM</td>
-                <td>xyz.com</td>
-                <td>30s</td>
-            </tr>
-
-        </tbody>
-    </table>
     
+    <div class="row">
+        <table id="cert_table" class="table table-hover">
+            <thead>
+                <tr class="green-row">
+                    <th>Added On</th>
+                    <th>Host</th>
+                    <th>Last Update</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>12 December 2017 11PM</td>
+                    <td>abc.com</td>
+                    <td>3s</td>
+                </tr>
+
+                <tr>
+                    <td>1 January 2018 9AM</td>
+                    <td>pqr.com</td>
+                    <td>7s</td>
+                </tr>
+
+                <tr>
+                    <td>19 March 2018 7PM</td>
+                    <td>xyz.com</td>
+                    <td>30s</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>        

@@ -24,6 +24,66 @@ function bar_progress(progress_line_object, direction) {
 
 
 
+function get_certificate(type) {
+
+    $.ajax({
+        type: "GET",
+        url : '/api/v1/certificate/certificate/',
+        data: { 
+			
+        },
+
+        success: function(json) {
+			
+			$('#cert_table tbody').html("");
+			$.each(json.results, function(key, value) {
+				// alert(value.url+ "::"+value.date);
+
+				$("#cert_table tbody").append('<tr>\
+				<td>'+value.date+'</td>\
+				<td>'+value.url+'</td>\
+				<td>12s</td>\
+				</tr>');
+				
+		});
+
+		$('#cert_table tbody').selectpicker('refresh');
+        },
+      
+        error: function (request, status, error) {
+                alert("Failed "+error);
+        }
+      
+      });
+
+}
+
+
+function add_certificate(category, url) {
+
+	//alert(category + "::" + url);
+	$('#myModal').hide(200);
+    $.ajax({
+        type: "POST",
+        url : '/api/v1/certificate/certificate/',
+        data: { 
+			category: category,
+			url: url,
+			csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val(),
+        },
+
+        success: function(json) {
+            alert("Succed");
+        },
+      
+        error: function (request, status, error) {
+                alert("Failed "+error);
+        }
+      
+      });
+
+}
+
 jQuery(document).ready(function() {
 
 	
@@ -35,6 +95,7 @@ jQuery(document).ready(function() {
 	});
 
 	$(".products-blocks .active").on("click", function() {
+		get_certificate();
 		$("#cert_table thead tr ").removeClass().addClass("green-row");
 	});
 
@@ -46,6 +107,13 @@ jQuery(document).ready(function() {
 		$("#cert_table thead tr ").removeClass().addClass("red-row");
 	});
 
+
+	$('.new_cert_btn').on('click', function() {
+		var category = $(".category option:selected").val();
+		var url = $('[name=new_cert_url]').val();
+		add_certificate(category, url);
+	});
+	
     /*
         Form
     */

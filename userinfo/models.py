@@ -26,6 +26,7 @@ class State(models.Model):
             blank=False)
     status = models.BooleanField("Status", default=1,
             choices=STATUS_CHOICES, blank=False)
+
     def __str__(self):
         return "{}".format(self.state_name)
 
@@ -42,18 +43,19 @@ class City(models.Model):
 
 class User(AbstractUser):
     address_line1 = models.CharField("Address Line 1",
-            max_length=200, blank=True)
+                                     max_length=200, blank=True)
     address_line2 = models.CharField("Address Line 2",
-            max_length=200, blank=True)
+                                     max_length=200, blank=True)
     city = models.ForeignKey(City, blank=True, null=True)
     state = models.ForeignKey(State, blank=True, null=True)
     postal_code = models.CharField("Postal Code", max_length=10,
-            validators=[RegexValidator(r'^\d{1,10}$')], blank=True)
+                                   validators=[RegexValidator(r'^\d{1,10}$')],
+                                   blank=True)
     contact_no = models.CharField("Contact Numer", max_length=15,
-            blank=True, unique=True)
+                                  blank=True, unique=True)
     country = models.ForeignKey(Country, blank=True, null=True)
     status = models.BooleanField('Status', default=1,
-            choices=STATUS_CHOICES, blank=False)
+                                 choices=STATUS_CHOICES, blank=False)
     def __str__(self):
         return "{} {}".format(self.first_name, self.last_name)
 
@@ -68,4 +70,3 @@ class Message(models.Model):
             choices=STATUS_CHOICES, blank=False)
     def __str__(self):
         return "{}".format(self.user)
-

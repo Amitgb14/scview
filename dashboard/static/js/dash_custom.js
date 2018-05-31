@@ -94,18 +94,18 @@ jQuery(document).ready(function() {
 		jQuery("#"+$(this).attr("target")).show(200);
 	});
 
-	$(".products-blocks .active").on("click", function() {
-		get_certificate();
-		$("#cert_table thead tr ").removeClass().addClass("green-row");
-	});
+	// $(".products-blocks .active").on("click", function() {
+	// 	get_certificate();
+	// 	$("#cert_table thead tr ").removeClass().addClass("green-row");
+	// });
 
-	$(".products-blocks .warning").on("click", function() {
-		$("#cert_table thead tr ").removeClass().addClass("yellow-row");
-	});
+	// $(".products-blocks .warning").on("click", function() {
+	// 	$("#cert_table thead tr ").removeClass().addClass("yellow-row");
+	// });
 
-	$(".products-blocks .critical").on("click", function() {
-		$("#cert_table thead tr ").removeClass().addClass("red-row");
-	});
+	// $(".products-blocks .critical").on("click", function() {
+	// 	$("#cert_table thead tr ").removeClass().addClass("red-row");
+	// });
 
 
 	$('.new_cert_btn').on('click', function() {
